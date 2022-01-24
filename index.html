@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新年カウントダウンタイマー</title>
+</head>
+<link rel="stylesheet" href="style.css" />
+<body>
+
+  <div class="container">
+    <div class="countdown">
+      <h1 class="countdown-title">Countdown to
+        <span id="year" class="new-year"></span>
+      </h1>
+      <div class="time-container">
+        <p class="time"><span id="days" class="time-num"></span>days</p>
+        <p class="time"><span id="hours" class="time-num"></span>hours</p>
+        <p class="time"><span id="minutes" class="time-num"></span>minutes</p>
+        <p class="time"><span id="seconds" class="time-num"></span>seconds</p>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+const year = document.getElementById('year');
+const days = document.getElementById('days');
+const hours = document.getElementById('hours');
+const minutes = document.getElementById('minutes');
+const seconds = document.getElementById('seconds');
+const currentYear = new Date().getFullYear();
+const nextYear = currentYear + 1;
+const newYearTime = new Date(`January 01 ${nextYear} 00:00:00`);
+year.innerText = nextYear;
+function updateCountdown() {
+  const currentTime = new Date();
+  const diff = newYearTime - currentTime;
+  const d = Math.floor(diff / 1000 / 60 / 60 / 24);
+  const h = Math.floor(diff / 1000 / 60 / 60) % 24;
+  const m = Math.floor(diff / 1000 / 60) % 60;
+  const s = Math.floor(diff / 1000) % 60;
+  days.innerText = d;
+  hours.innerText = h < 10 ? '0' + h : h;
+  minutes.innerText = m < 10 ? '0' + m : m;
+  seconds.innerText = s < 10 ? '0' + s : s;
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+
+<style type="text/css">
+
+</html>

@@ -31,7 +31,11 @@
   text-align: center;
 }
 .countdown-title {
-  font-family: 'Comfortaa', cursive;
+
+　<link rel="preconnect" href="https://fonts.googleapis.com"> 
+　<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+　<link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+　font-family: 'Comfortaa', cursive;
   font-size: 100px;
   line-height: 1.2;
 }

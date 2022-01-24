@@ -66,11 +66,11 @@
 }
 @media screen and (max-width: 600px) {
   .countdown-title {
-    font-size: 50px;
+    font-size: 30px;
   }
 
   .new-year {
-    font-size: 100px;
+    font-size: 80px;
   }
 
   .time-wrap {
